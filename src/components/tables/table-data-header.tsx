@@ -14,7 +14,7 @@ export default function TableDataHeader({isDriver}: TableDataHeaderProps): React
         <>
             <Card sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <CardContent>
-                    <Typography variant="h2">Datos</Typography>
+                    <Typography variant="h3">Datos</Typography>
                 </CardContent>
                 <CardContent sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', gap: '3rem' }}>
                     <OutlinedInput id="outlined-basic" placeholder="Buscar" size="small" startAdornment={

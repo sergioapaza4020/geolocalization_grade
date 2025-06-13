@@ -1,11 +1,14 @@
 'use client';
 
-import { Button, Card, CardContent, InputAdornment, MenuItem, OutlinedInput, Select, SelectChangeEvent, TextField, Typography } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
+import { Button, Card, CardContent, MenuItem, Select, SelectChangeEvent, Typography } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import * as React from "react";
 
-export default function MapHeader(): React.JSX.Element {
+interface MapHeaderProps {
+    edit?: boolean;
+}
+
+export default function MapHeader({ edit }: MapHeaderProps): React.JSX.Element {
     const [route, setRoute] = React.useState('');
 
     const handleChange = (event: SelectChangeEvent) => {
@@ -24,14 +27,35 @@ export default function MapHeader(): React.JSX.Element {
                         size='small'
                         sx={{ width: '14rem' }}
                     >
-                        <MenuItem value='line1'>line 1</MenuItem>
-                        <MenuItem value='line2'>line 2</MenuItem>
-                        <MenuItem value='line3'>line 3</MenuItem>
+                        <MenuItem value='line1'>Primera parada</MenuItem>
+                        <MenuItem value='line2'>Segunda parada</MenuItem>
+                        <MenuItem value='line3'>Tercera parada</MenuItem>
+                        <MenuItem value='line4'>Cuarta parada</MenuItem>
+                        <MenuItem value='line5'>Quinta parada</MenuItem>
+                        <MenuItem value='line6'>Sexta parada</MenuItem>
+                        <MenuItem value='line7'>Séptima parada</MenuItem>
                     </Select>
                 </CardContent>
                 <CardContent sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', gap: '3rem' }}>
-                    <Button variant="contained">Editar</Button>
-                    <Button variant="contained" sx={{ display: 'flex', gap: '0.5rem' }}>Nuevo <AddIcon /></Button>
+                    {!edit ? (
+                        <>
+                            <Button variant="contained" href="/dashboard/routes/edit-route">
+                                Editar
+                            </Button>
+                            <Button variant="contained" href="/dashboard/routes/create-route" sx={{ display: 'flex', gap: '0.5rem' }}>
+                                Nuevo <AddIcon />
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            <Button variant="contained" href="/dashboard/routes">
+                                Guardar
+                            </Button>
+                            <Button variant="contained" href="/dashboard/routes" sx={{ display: 'flex', gap: '0.5rem' }}>
+                                Eliminar
+                            </Button>
+                        </>
+                    )}
                 </CardContent>
             </Card>
         </>
