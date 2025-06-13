@@ -10,7 +10,13 @@ export const paths = {
 
     profile: '/dashboard/profile',
     users: '/dashboard/users',
-    drivers: '/dashboard/drivers',
+    registerDriver: '/dashboard/register-driver',
+    drivers: {
+      profile: '/dashboard/drivers/profile',
+      assignments: '/dashboard/drivers/assignments',
+      workday: '/dashboard/drivers/workday',
+      record: '/dashboard/drivers/record',
+    },
     routes: '/dashboard/routes',
     assignments: '/dashboard/assignments',
   },
