@@ -12,27 +12,27 @@ export const metadata = { title: `Perfil | Dashboard | ${config.site.name}` } sa
 export default function Page(): React.JSX.Element {
     return (
         <div className={styles.profile_form_container}>
-        <Card>
-            <div className={styles.profile_data_container}>
-                <CardHeader title="Datos" />
-            </div>
-            <div className={styles.update}>
-                <CardContent >
-                    <ProfileInfo />
-                </CardContent>
-                <CardContent>
-                    <UpdateProfileForm />
-                </CardContent>
-            </div>
-        </Card>
-        <Card>
-            <div className={styles.profile_data_container}>
-                <CardHeader title="Cambiar contraseña" />
-            </div>
-            <div className={styles.update}>
-                <ChangePasswordForm />
-            </div>
-        </Card>
+            <Card>
+                <div className={styles.profile_data_container}>
+                    <CardHeader title="Datos" />
+                </div>
+                <div className={styles.update}>
+                    <CardContent >
+                        <ProfileInfo />
+                    </CardContent>
+                    <CardContent>
+                        <UpdateProfileForm />
+                    </CardContent>
+                </div>
+            </Card>
+            <Card>
+                <div className={styles.profile_data_container}>
+                    <CardHeader title="Cambiar contraseña" />
+                </div>
+                <div className={styles.update}>
+                    <ChangePasswordForm />
+                </div>
+            </Card>
         </div>
     )
 }
